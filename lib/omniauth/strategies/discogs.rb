@@ -7,8 +7,8 @@ module OmniAuth
       option :client_options, {
         :site => 'https://www.discogs.com/',
         :authorize_url => 'https://www.discogs.com/oauth/authorize',
-        :token_url => 'http://api.discogs.com/oauth/access_token'
-        # :token_url => 'http://api.discogs.com/oauth/request_token'
+        #:token_url => 'http://api.discogs.com/oauth/access_token'
+        :token_url => 'http://api.discogs.com/oauth/request_token'
       }
 
       uid { raw_info['id'] }
