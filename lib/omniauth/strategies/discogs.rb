@@ -1,14 +1,17 @@
-require 'omniauth-oauth2'
+require 'omniauth-oauth'
+require 'multi_json'
 
 module OmniAuth
   module Strategies
-    class Discogs < OmniAuth::Strategies::OAuth2
+    class Discogs < OmniAuth::Strategies::OAuth
+
       option :name, 'discogs'
+
       option :client_options, {
-        :site => 'https://www.discogs.com/',
-        :authorize_url => 'https://www.discogs.com/oauth/authorize',
-        #:token_url => 'http://api.discogs.com/oauth/access_token'
-        :token_url => 'http://api.discogs.com/oauth/request_token'
+        :site => 'http://api.discogs.com/',
+        :request_token_path => '/oauth/request_token',
+        :access_token_path => '/oauth/access_token',
+        :authorize_url => 'http://www.discogs.com/oauth/authorize',
       }
 
       uid { raw_info['id'] }
@@ -21,12 +24,11 @@ module OmniAuth
       end
 
       extra do
-        {:raw_info => raw_info}
+        {:user_info => raw_info}
       end
 
       def raw_info
-        access_token.options[:mode] = :query
-        @raw_info ||= access_token.get('/oauth/identity').parsed
+        @raw_info ||= MultiJson.decode(access_token.get("/oauth/identity").body)
       end
     end
   end
