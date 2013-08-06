@@ -15,6 +15,5 @@ Gem::Specification.new do |spec|
   spec.files          = `git ls-files`.split("\n")
   spec.require_paths  = ["lib"]
 
-  # spec.add_dependency 'omniauth', '~> 1.0'
-  spec.add_dependency 'omniauth-oauth'
+  spec.add_dependency 'omniauth-oauth', '~> 1.0'
 end
