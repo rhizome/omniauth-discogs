@@ -1,38 +1,27 @@
 PATH
   remote: .
   specs:
-    omniauth_discogs (0.0.1)
-      omniauth-oauth2
+    omniauth-discogs (0.0.3)
+      omniauth-oauth (~> 1.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    faraday (0.8.7)
-      multipart-post (~> 1.1)
-    hashie (2.0.5)
-    httpauth (0.2.0)
-    jwt (0.1.8)
-      multi_json (>= 1.5)
-    multi_json (1.7.7)
-    multipart-post (1.2.0)
-    oauth2 (0.8.1)
-      faraday (~> 0.8)
-      httpauth (~> 0.1)
-      jwt (~> 0.1.4)
-      multi_json (~> 1.0)
-      rack (~> 1.2)
-    omniauth (1.1.4)
-      hashie (>= 1.2, < 3)
-      rack
-    omniauth-oauth2 (1.1.1)
-      oauth2 (~> 0.8.0)
+    hashie (3.6.0)
+    oauth (0.5.4)
+    omniauth (1.9.0)
+      hashie (>= 3.4.6, < 3.7.0)
+      rack (>= 1.6.2, < 3)
+    omniauth-oauth (1.1.0)
+      oauth
       omniauth (~> 1.0)
-    rack (1.5.2)
-    rake (10.1.0)
+    rack (2.0.6)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  omniauth_discogs!
-  rake
+  omniauth-discogs!
+
+BUNDLED WITH
+   1.17.1
