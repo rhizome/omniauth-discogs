@@ -13,4 +13,5 @@ capybara-*.html
 /spec/tmp/*
 **.orig
 rerun.txt
-pickle-email-*.htmlGemfile.lock
+pickle-email-*.html
+Gemfile.lock
